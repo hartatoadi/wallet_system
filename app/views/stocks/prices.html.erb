@@ -1,0 +1,21 @@
+<!-- app/views/stocks/prices.html.erb -->
+<h1>Stock Prices</h1>
+
+<% if @prices.blank? %>
+  <p>No data available.</p>
+<% else %>
+  <% @prices.each do |stock| %>
+    <div>
+      <h2><%= stock["Name"] %> - (<%= stock["Symbol"] %>)</h2>
+      <p>Last Traded Price (LTP): <%= stock["LTP"] %></p>
+      <p>Net Change: <%= stock["Net Change"] %></p>
+      <p>Percentage Change: <%= stock["%Chng"] %> %</p>
+      <p>High: <%= stock["High"] %></p>
+      <p>Low: <%= stock["Low"] %></p>
+      <p>52-Week High: <%= stock["52Wk High"] %></p>
+      <p>52-Week Low: <%= stock["52Wk Low"] %></p>
+      <p>Date/Time: <%= stock["Date/Time"] %></p>
+    </div>
+    <hr>
+  <% end %>
+<% end %>

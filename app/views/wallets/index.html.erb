@@ -1,0 +1,20 @@
+<h1>Wallets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Balance</th>
+      <th>Entity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wallets.each do |wallet| %>
+      <tr>
+        <td><%= wallet.id %></td>
+        <td><%= wallet.balance %></td>
+        <td><%= wallet.entity_type %> # Entity type and id</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

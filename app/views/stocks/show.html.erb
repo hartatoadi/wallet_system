@@ -1,0 +1,25 @@
+<!-- app/views/stocks/show.html.erb -->
+<h1>Stock Price</h1>
+
+<% if @stock_price_search %>
+  <table>
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>ISIN</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stock_price_search.each do |stock| %>
+        <tr>
+          <td><%= stock["Symbol"] %></td>
+          <td><%= stock["ISIN"] %></td>
+          <td><%= stock["Name"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No data available.</p>
+<% end %>

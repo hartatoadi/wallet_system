@@ -1,0 +1,23 @@
+<!-- app/views/stocks/index.html.erb -->
+<h1>All Stock Prices</h1>
+
+<% if @stock_prices.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stock_prices.each do |stock| %>
+        <tr>
+          <td><%= stock["symbol"] %></td>
+          <td><%= stock["lastPrice"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No stock prices available.</p>
+<% end %>
